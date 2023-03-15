@@ -3,12 +3,26 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const mongoose = require('mongoose');
 
-const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/usersRouter');
 const todoRouter = require('./routes/todoRouter');
 
 const app = express();
+
+//connect to mongodb
+const url = 'mongodb://127.0.0.1:27017/raydo';
+const connect = mongoose.connect(url, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+connect.then(() => {
+  console.log('Connected correctly to server')
+})
+.catch((error) => {
+  console.log('Failed to connect', error)
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -20,7 +34,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/todos', todoRouter);
 
