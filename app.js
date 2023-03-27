@@ -18,11 +18,11 @@ const connect = mongoose.connect(url, {
 });
 
 connect.then(() => {
-  console.log('Connected correctly to server')
+  console.log('Connected correctly to database')
 })
 .catch((error) => {
   console.log('Failed to connect', error)
-})
+}) 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
