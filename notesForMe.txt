@@ -1,0 +1,6 @@
+I've confirmed connection with DB. Documents are saving.
+
+Next thing to do:
+- Create model for user. Does this need a subdocument?
+
+After I finish my routes and schema, start working on authentication. 
