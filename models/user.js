@@ -32,6 +32,10 @@ const userSchema = new Schema({
             message: props => `${props.value} is not a valid phone number!`
         },
     },
+    admin: {
+        type: Boolean,
+        default: false,
+    },
     preference: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Preference',
