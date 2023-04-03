@@ -8,12 +8,11 @@ const categorySchema = new Schema({
         unique: true,
     },
     userID: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
         required: true,
     }
 }, 
 {});
 
-const Category = mongoose.model('Category', categorySchema);
-
-module.exports = Category;
+module.exports = mongoose.model('Category', categorySchema);
