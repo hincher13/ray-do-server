@@ -1,4 +1,5 @@
 I've confirmed connection with DB. Documents are saving.
+I can get, create and delete todos
 
 Next thing to do:
 - Work on business logic processing to start returning actual data with routes
