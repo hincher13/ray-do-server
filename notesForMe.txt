@@ -1,6 +1,6 @@
 I've confirmed connection with DB. Documents are saving.
 
 Next thing to do:
-- Create model for user. Does this need a subdocument?
+- Work on business logic processing to start returning actual data with routes
 
 After I finish my routes and schema, start working on authentication. 
